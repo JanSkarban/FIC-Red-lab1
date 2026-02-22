@@ -1,25 +1,146 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jan Skarban - Networks Lab 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Přání k narozeninám</title>
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: rgba(255, 255, 255, 0.08);
+            --text: #e2e8f0;
+            --muted: rgba(226, 232, 240, 0.75);
+            --accent: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.35);
+            --radius: 18px;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--text);
+            background:
+                    radial-gradient(800px 500px at 20% 10%, rgba(99,102,241,0.30), transparent 60%),
+                    radial-gradient(900px 600px at 80% 20%, rgba(236,72,153,0.25), transparent 60%),
+                    linear-gradient(180deg, #0b1026, var(--bg));
+        }
+
+        /* horní hero banner */
+        .top-banner {
+            height: 120px; /* prostor nahoře */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            /* jemné pastelové pozadí */
+            background: linear-gradient(
+                    90deg,
+                    rgba(255, 214, 231, 0.95),  /* pastel pink */
+                    rgba(205, 233, 255, 0.95),  /* pastel blue */
+                    rgba(225, 255, 237, 0.95)   /* pastel mint */
+            );
+
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .top-banner h2 {
+            margin: 0;
+            font-weight: 700;
+            font-size: clamp(16px, 2.4vw, 22px);
+            letter-spacing: 0.04em;
+            color: rgba(15, 23, 42, 0.78); /* tmavší text kvůli světlému banneru */
+        }
+
+        /* kontejner stránky */
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 18px 40px;
+            display: grid;
+            gap: 18px;
+            justify-items: center;
+        }
+
+        /* karta s obrázkem */
+        .photo-card {
+            width: min(720px, 100%);
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 14px;
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: calc(var(--radius) - 8px);
+            object-fit: cover;
+        }
+
+        /* banner s přáním */
+        .wish-banner {
+            width: min(720px, 100%);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            text-align: center;
+            background: linear-gradient(90deg, rgba(99,102,241,0.30), rgba(236,72,153,0.25));
+            border: 1px solid rgba(255,255,255,0.14);
+            box-shadow: var(--shadow);
+        }
+
+        .wish-banner h1 {
+            margin: 0;
+            font-size: clamp(22px, 3.2vw, 34px);
+            line-height: 1.15;
+            color: var(--accent);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        }
+
+        /* copyright/info */
+        .credits {
+            width: min(720px, 100%);
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .credits a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(226,232,240,0.65);
+        }
+        .credits a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Jan Skarban</h1>
-  <h2>Networks Lab 1: DNS & Hosting</h2>
+<header class="top-banner">
+    <h2>Anna's official birthday website 🎉</h2>
+</header>
 
-  <p>
-    Email: <a href="mailto:jan.skarban@udc.es">jan.skarban@udc.es</a>
-  </p>
+<main class="wrap">
+    <div class="photo-card">
+        <img src="image.JPG" alt="Narozeninový obrázek" />
+    </div>
 
-  <p>
-    DNS provider: <a href="https://freedns.afraid.org">Free DNS</a>
-  </p>
+    <section class="wish-banner" aria-label="Přání">
+        <h1>Happy birthday to my loved one! ❤️</h1>
+        <p>Check your email ;)</p>
+    </section>
 
-  <p>
-    This page is hosted on GitHub Pages and accessible via a custom subdomain.
-  </p>
+    <div class="credits">
+        <p>
+            DNS provider: <a href="https://freedns.afraid.org">Free DNS</a>
+        </p>
+    </div>
+</main>
 </body>
 </html>
-
